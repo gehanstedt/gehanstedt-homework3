@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>G Dog Enterprises</title>
+  <!-- Reference stylesheets from bootstrap, Google for Cinzel font, local override stylesheet local-style.css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/local-style.css">
+
+</head>
+
+<body>
+  <script src="password-generate.js" type="text/javascript">
+  </script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand bg-secondary text-light" href="index.html">G Dog Enterprises</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <div class="spacer">
+
+  </div>
+
+    <main class="container">
+      <header class="row">
+        <div class="col-sm-12 col-md-8 col-xl-8">
+              <h1>Password Generation Tool</h1>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-xl-8">
+          <hr>
+        </div>
+      </div>
+      <section class="row">
+        <div class="col-sm-12 col-md-6 col-xl-8">
+          <form onsubmit="return generatePassword()">
+            <div class="form-group row">
+              <label for="passwordLength" class="col-sm-4 col-form-label">Password Length</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control" id="passwordLength" placeholder="Between 8 - 128 characters">
+              </div>
+            </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Include lowercase letters?</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters1" value="Yes">
+                    <label class="form-check-label" for="includeLowercaseLetters1">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters2" value="No" checked="checked">
+                    <label class="form-check-label" for="includeLowercaseLetters2">No</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Include uppercase letters?</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters1" value="Yes">
+                    <label class="form-check-label" for="includeUppercaseLetters">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters2" value="No" checked="checked">
+                    <label class="form-check-label" for="includeUppercaseLetters">No</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Include special characters</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters1" value="Yes">
+                    <label class="form-check-label" for="includeLowerCaseLetters1">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters2" value="No" checked="checked">
+                    <label class="form-check-label" for="includeLowerCaseLetters2">No</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group row">
+              <label for="passwordLength" class="col-sm-4 col-form-label">Generated Password</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="passwordLength" placeholder="Generated Password will appear here" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Generate</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+<!--
+  <div class="card ml-5" style="width: 500px;">  
+    <main class="container">
+      <header class="row">
+        <div class="col-md-12">
+              <h1>Contact</h1>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+      <section class="row">
+        <div class="col-md-12">
+          <form action="#">
+            <table>
+              <tr>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>
+                  <input name="name" size="47" type="text" value="Name">
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+              </tr>
+              <tr>
+                <td>
+                  <input name="email" size="47" type="text" value="Email">
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea name="message" rows="4" cols="50">Message</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="Submit" class="btn btn-primary">Submit</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+-->
+
+  
+  <div class="spacer">
+  </div>
+
+  <footer>
+    <div class="row gregfooter-small">
+    </div>
+    <div class="row gregfooter-large">
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+</body>
+
+</html>
