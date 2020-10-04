@@ -19,6 +19,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand bg-secondary text-light" href="index.html">G Dog Enterprises</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
 
@@ -42,8 +43,8 @@
           <form onsubmit="return generatePassword()">
             <div class="form-group row">
               <label for="passwordLength" class="col-sm-4 col-form-label">Password Length</label>
-              <div class="col-sm-8">
-                <input type="email" class="form-control" id="passwordLength" placeholder="Between 8 - 128 characters">
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="passwordLength" placeholder="Between 8 - 128 chars">
               </div>
             </div>
             <fieldset class="form-group">
@@ -51,11 +52,11 @@
                 <legend class="col-form-label col-sm-4 pt-0">Include lowercase letters?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters1" value="Yes">
+                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters1" value="true">
                     <label class="form-check-label" for="includeLowercaseLetters1">Yes</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters2" value="No" checked="checked">
+                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters2" value="false" checked="checked">
                     <label class="form-check-label" for="includeLowercaseLetters2">No</label>
                   </div>
                 </div>
@@ -66,11 +67,11 @@
                 <legend class="col-form-label col-sm-4 pt-0">Include uppercase letters?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters1" value="Yes">
+                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters1" value="true">
                     <label class="form-check-label" for="includeUppercaseLetters">Yes</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters2" value="No" checked="checked">
+                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters2" value="false" checked="checked">
                     <label class="form-check-label" for="includeUppercaseLetters">No</label>
                   </div>
                 </div>
@@ -81,12 +82,27 @@
                 <legend class="col-form-label col-sm-4 pt-0">Include special characters</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters1" value="Yes">
+                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters1" value="true">
                     <label class="form-check-label" for="includeLowerCaseLetters1">Yes</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters2" value="No" checked="checked">
+                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters2" value="false" checked="checked">
                     <label class="form-check-label" for="includeLowerCaseLetters2">No</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Include numbers</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers1" value="true">
+                    <label class="form-check-label" for="includeNumbers1">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers2" value="false" checked="checked">
+                    <label class="form-check-label" for="includeNumbers2">No</label>
                   </div>
                 </div>
               </div>
