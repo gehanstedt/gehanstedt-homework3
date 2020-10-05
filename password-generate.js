@@ -7,10 +7,11 @@ function generatePassword () {
     var passwordLengthString = document.forms["passwordGenerateForm"]["passwordLength"].value;
     var varPasswordLength;
     var includeLowercaseLettersString = document.forms["passwordGenerateForm"]["includeLowercaseLetters"].value;
-    var includeUppercaseLettersString = document.forms["passwordGenerateForm"]["includeLowercaseLetters"].value;
-    var includeSpecialCharactersString = document.forms["passwordGenerateForm"]["includeLowercaseLetters"].value;
-    var includeNumbersString = document.forms["passwordGenerateForm"]["includeLowercaseLetters"].value;
+    var includeUppercaseLettersString = document.forms["passwordGenerateForm"]["includeUppercaseLetters"].value;
+    var includeSpecialCharactersString = document.forms["passwordGenerateForm"]["includeSpecialCharacters"].value;
+    var includeNumbersString = document.forms["passwordGenerateForm"]["includeNumbers"].value;
     var potentialPasswordArray = "";
+    var randomPassword = "";
 
     // Log page input for debugging
     logDebug (debug, "Password Length String:  " + passwordLengthString);
@@ -39,12 +40,40 @@ function generatePassword () {
     }
 
     else {
-        alert ("All checks out.");
+        // Form validation complete, let's proceed with password generation and create the potential password array
+
+        if (varIncludeLowercaseLetters) {
+            potentialPasswordArray = potentialPasswordArray + "abcdefghijklmnopqrstuvwxyz";
+        }
+
+        if (varIncludeUppercaseLetters) {
+            potentialPasswordArray = potentialPasswordArray + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+
+        if (varIncludeSpecialCharacters) {
+            potentialPasswordArray = potentialPasswordArray +  "#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        }
+
+        if (varIncludeNumbers) {
+            potentialPasswordArray = potentialPasswordArray + "0123456789";
+        }
+
+        logDebug (debug, "Potential password array: " + potentialPasswordArray);
+
+        // Now that potential password array is built, let's walk through and build the random password
+
+        var lengthPasswordArray = potentialPasswordArray.length;
+        var randomNumber;
+        for (var counter = 0; counter < varPasswordLength; counter ++) {
+            randomNumber = Math.floor (Math.random () * lengthPasswordArray);
+            logDebug (debug, "Random #" + counter + " : " + randomNumber);
+            randomPassword = randomPassword + potentialPasswordArray [randomNumber];
+        }
+
+        logDebug (debug, "Random Password = " + randomPassword);
+
+        document.getElementById("generatedPassword").value=randomPassword;
     }
-
-    logDebug (debug, "varPasswordLength = " + varPasswordLength);
-
-    debug;
 
     return false;
 }
