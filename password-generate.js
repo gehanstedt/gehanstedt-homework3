@@ -31,6 +31,11 @@ function generatePassword () {
         alert ("For password length, please enter a number between 8 and 128");
     }
 
+    else if (passwordLengthString === "") {
+        alert ("Password length is required, please enter a number between 8 and 128");
+
+    }
+
     else if ((varPasswordLength < 8) || (varPasswordLength > 128)) {
         alert ("Password length must be between 8 and 128");
     }
