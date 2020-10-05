@@ -21,105 +21,101 @@
     </button>
   </nav>
 
-  <div class="spacer">
-
-  </div>
-
-    <main class="container">
-      <header class="row">
-        <div class="col-sm-12 col-md-10 col-xl-10">
-              <h1>Password Generation Tool</h1>
-        </div>
-      </header>
-      <div class="row">
-        <div class="col-sm-12 col-md-10 col-xl-10">
-          <hr>
-        </div>
+  <main class="container">
+    <header class="row">
+      <div class="col-sm-12 col-md-10 col-xl-10">
+            <h1>Password Generation Tool</h1>
       </div>
-      <section class="row">
-        <div class="col-sm-12 col-md-10 col-xl-10">
-          <form name="passwordGenerateForm" onsubmit="return generatePassword()" method="POST">
-            <div class="form-group row">
-              <label for="passwordLength" class="col-sm-4 col-form-label">Password Length</label>
-              <div class="col-sm-3">
-                <input type="text" class="form-control" id="passwordLength" name="passwordLength" placeholder="Between 8 - 128 chars">
-              </div>
+    </header>
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-xl-10">
+        <hr>
+      </div>
+    </div>
+    <section class="row">
+      <div class="col-sm-12 col-md-10 col-xl-10">
+        <form name="passwordGenerateForm" onsubmit="return generatePassword()" method="POST">
+          <div class="form-group row">
+            <label for="passwordLength" class="col-sm-4 col-form-label">Password Length</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="passwordLength" name="passwordLength" placeholder="Between 8 - 128 chars">
             </div>
-            <fieldset class="form-group">
-              <div class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Include lowercase letters?</legend>
-                <div class="col-sm-8">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters1" value="true">
-                    <label class="form-check-label" for="includeLowercaseLetters1">Yes</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters2" value="false" checked="checked">
-                    <label class="form-check-label" for="includeLowercaseLetters2">No</label>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset class="form-group">
-              <div class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Include uppercase letters?</legend>
-                <div class="col-sm-8">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters1" value="true">
-                    <label class="form-check-label" for="includeUppercaseLetters1">Yes</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters2" value="false" checked="checked">
-                    <label class="form-check-label" for="includeUppercaseLetters2">No</label>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset class="form-group">
-              <div class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Include special characters?</legend>
-                <div class="col-sm-8">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeSpecialCharacters" id="includeSpecialCharacters1" value="true">
-                    <label class="form-check-label" for="includeSpecialCharacters1">Yes</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeSpecialCharacters" id="includeSpecialCharacters2" value="false" checked="checked">
-                    <label class="form-check-label" for="includeSpecialCharacters2">No</label>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset class="form-group">
-              <div class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Include numbers?</legend>
-                <div class="col-sm-8">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers1" value="true">
-                    <label class="form-check-label" for="includeNumbers1">Yes</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers2" value="false" checked="checked">
-                    <label class="form-check-label" for="includeNumbers2">No</label>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <div class="form-group row">
-              <label for="passwordLength" class="col-sm-4 col-form-label">Generated Password</label>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Include lowercase letters?</legend>
               <div class="col-sm-8">
-                <input type="text" class="form-control" name="generatedPassword" id="generatedPassword" placeholder="Generated Password will appear here" disabled>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters1" value="true">
+                  <label class="form-check-label" for="includeLowercaseLetters1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeLowercaseLetters" id="includeLowercaseLetters2" value="false" checked="checked">
+                  <label class="form-check-label" for="includeLowercaseLetters2">No</label>
+                </div>
               </div>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <button class="btn btn-primary">Generate</button>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Include uppercase letters?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters1" value="true">
+                  <label class="form-check-label" for="includeUppercaseLetters1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeUppercaseLetters" id="includeUppercaseLetters2" value="false" checked="checked">
+                  <label class="form-check-label" for="includeUppercaseLetters2">No</label>
+                </div>
               </div>
             </div>
-          </form>
-        </div>
-      </section>
-    </main>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Include special characters?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeSpecialCharacters" id="includeSpecialCharacters1" value="true">
+                  <label class="form-check-label" for="includeSpecialCharacters1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeSpecialCharacters" id="includeSpecialCharacters2" value="false" checked="checked">
+                  <label class="form-check-label" for="includeSpecialCharacters2">No</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Include numbers?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers1" value="true">
+                  <label class="form-check-label" for="includeNumbers1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers2" value="false" checked="checked">
+                  <label class="form-check-label" for="includeNumbers2">No</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <label for="passwordLength" class="col-sm-4 col-form-label">Generated Password</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="generatedPassword" id="generatedPassword" placeholder="Generated Password will appear here" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button class="btn btn-primary">Generate</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
