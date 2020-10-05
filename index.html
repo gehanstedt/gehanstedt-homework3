@@ -8,7 +8,7 @@
   <!-- Reference stylesheets from bootstrap, Google for Cinzel font, local override stylesheet local-style.css -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/local-style.css">
+  <!--link rel="stylesheet" href="css/local-style.css" -->
 
 </head>
 
@@ -40,11 +40,11 @@
       </div>
       <section class="row">
         <div class="col-sm-12 col-md-10 col-xl-10">
-          <form onsubmit="return generatePassword()">
+          <form name="passwordGenerateForm" onsubmit="return generatePassword()" on>
             <div class="form-group row">
               <label for="passwordLength" class="col-sm-4 col-form-label">Password Length</label>
               <div class="col-sm-3">
-                <input type="text" class="form-control" id="passwordLength" placeholder="Between 8 - 128 chars">
+                <input type="text" class="form-control" id="passwordLength" name="passwordLength" placeholder="Between 8 - 128 chars">
               </div>
             </div>
             <fieldset class="form-group">
@@ -79,22 +79,22 @@
             </fieldset>
             <fieldset class="form-group">
               <div class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Include special characters</legend>
+                <legend class="col-form-label col-sm-4 pt-0">Include special characters?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters1" value="true">
-                    <label class="form-check-label" for="includeLowerCaseLetters1">Yes</label>
+                    <input class="form-check-input" type="radio" name="includeSpecialCharacters" id="includeLowerCaseLetters1" value="true">
+                    <label class="form-check-label" for="includeSpecialCharacters1">Yes</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="includeLowerCaseLetters" id="includeLowerCaseLetters2" value="false" checked="checked">
-                    <label class="form-check-label" for="includeLowerCaseLetters2">No</label>
+                    <input class="form-check-input" type="radio" name="includeSpecialCharacters" id="includeLowerCaseLetters2" value="false" checked="checked">
+                    <label class="form-check-label" for="includeSpecialCharacters2">No</label>
                   </div>
                 </div>
               </div>
             </fieldset>
             <fieldset class="form-group">
               <div class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Include numbers</legend>
+                <legend class="col-form-label col-sm-4 pt-0">Include numbers?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="includeNumbers" id="includeNumbers1" value="true">
@@ -110,12 +110,12 @@
             <div class="form-group row">
               <label for="passwordLength" class="col-sm-4 col-form-label">Generated Password</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="passwordLength" placeholder="Generated Password will appear here" disabled>
+                <input type="text" class="form-control" name="generatedPassword" id="generatedPassword" placeholder="Generated Password will appear here" disabled>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Generate</button>
+                <button class="btn btn-primary">Generate</button>
               </div>
             </div>
           </form>
